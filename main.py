@@ -11,10 +11,54 @@ Further ideas:
 """
 
 import random
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 from typing import Any
 import time
+
+
+@dataclass
+class QuestStage:
+    lore: str
+    completed: bool = False
+
+
+@dataclass
+class Quest:
+    id: str
+    name: str
+    description: str
+    stages: list[QuestStage]
+    current_stage: int = 0
+    completed: bool = False
+    lore_intro: str = ""
+    lore_completion: str = ""
+
+    def start(self) -> None:
+        print(f"📜 Quest Started: {self.name}")
+        print(f"🗺️ {self.description}")
+        print(f"✨ {self.lore_intro}\n")
+
+    def advance(self) -> None:
+        if self.completed:
+            print(f"✅ Quest already completed: {self.name}")
+            return
+
+        if self.current_stage >= len(self.stages):
+            self.completed = True
+            print(f"\n🏁 Quest Complete: {self.name}")
+            print(f"🎉 {self.lore_completion}")
+            return
+
+        stage = self.stages[self.current_stage]
+        stage.completed = True
+        print(f"🔎 Stage {self.current_stage + 1}: {stage.lore}")
+        self.current_stage += 1
+
+        if self.current_stage >= len(self.stages):
+            self.completed = True
+            print(f"\n🏁 Quest Complete: {self.name}")
+            print(f"🎉 {self.lore_completion}")
 
 
 @dataclass(frozen=True)
@@ -24,38 +68,68 @@ class Item:
     effect: str | None = None  # Later we will have actual effect hooks
 
 
-items: dict[str, list[Item]] = {
-    "common": [
-        Item(
+items: dict[str, dict[str, Item]] = {
+    "common": {
+        "worn_training_sword": Item(
             name="Worn Training Sword",
             descr="A dented but dependable blade, once used by squired-in-training",
             effect="(1/3)% Double XP gain on grind, 2 charges then breaks",
         ),
-        Item(
+        "gatherers_satchel": Item(
             name="Gatherer's Satchel",
             descr="A threadbare pouch with room for a few herbs, logs, or copper ore.",
             effect="10% Chance to double resource gain",
         ),
-    ],
-    "uncommon": [
-        Item(
+    },
+    "uncommon": {
+        "card_deck_gambler": Item(
             name="Card Deck (Gambler's Potential)",
             descr="Who can risk more than he who has nothing to lose?",
             effect="Gamble this card, do 4 grind sessions to complete gamble, 2/3 chance to upgrade, 1/3 chance to get destroyed",
         ),
-        Item(
+        "basic_recipe": Item(
             name="Basic Recipe",
             descr="A basic crafting recipe.",
             effect="Learn a basic crafting recipe from one of the crafting schools. Gain 20 XP.",
         ),
-    ],
-    "rare": [
-        Item(
+        "mirror_of_echoes": Item(
+            name="Mirror of Echoes",
+            descr="A handheld mirror that hums softly. It remembers your effort.",
+            effect="On next repeated task, gain +50% XP if done within 24h of original.",
+        ),
+        "charred_map_fragment": Item(
+            name="Charred Map Fragment",
+            descr="A scorched scrap of parchment. The edges whisper of forgotten paths.",
+            effect="Unlocks a hidden side quest chain after completing 3 exploration-type tasks.",
+        ),
+        "dusty_journal_page": Item(
+            name="Dusty Journal Page (Echos from the Past)",
+            descr="Covered in half-legible scrawlings, but one entry stands out.",
+            effect="Select any task you've neglected for over a week. Completing it now grants double rewards and logs a 'Redemption' milestone.",
+        ),
+        "clockwork_beetle": Item(
+            name="Clockwork Beetle",
+            descr="This tiny mechanical creature clicks softly, keeping time with your focus.",
+            effect="If a focus task is completed in a single uninterrupted sprint, gain double Gold.",
+        ),
+        "half_full_flask": Item(
+            name="Half-Full Flask",
+            descr="You're not sure what's in it, but it smells like courage.",
+            effect="Once per week, use to skip a daily without penalty.",
+        ),
+        "whispering_locket": Item(
+            name="Whispering Locket",
+            descr="An old, tarnished locket that seems to hum when you're alone. It won't open... yet.",
+            effect="Adds a mysterious entry to your collection log. Triggers a 3-task mini-quest once examined.",
+        ),
+    },
+    "rare": {
+        "chronomancers_sandglass": Item(
             name="Chronomancer's Sandglass",
             descr="This cracked hourglass was once used to stretch seconds into focus-filled eternities.",
             effect="Do a special grind that lasts 45 minutes, has significantly higher Rare dropchance.",
-        )
-    ],
+        ),
+    },
 }
 
 
@@ -159,20 +233,71 @@ class GrindRewards(Rewards):
         return reward_list
 
 
+def pull_item(tier: str) -> Item:
+    if tier not in items:
+        raise ValueError(f"No items available for tier: {tier}")
+
+    item_pool = items[tier]
+    item = random.choice(list(item_pool.values()))
+
+    # Titan forge logic: uncommon has a 10% chance to become a rare
+    if tier == "uncommon" and random.random() < 0.10:
+        print(f"💥 Titan Forged! {item.name} has been upgraded to Rare!")
+        rare_pool = items["rare"]
+        return random.choice(list(rare_pool.values()))
+
+    return item
+
+
 player_info = {
-    "stats": {"xp": 50},
+    "player_stats": {"xp": 70},
     "currency": {
-        "gold": 19,
+        "gold": 24,
         "woodworking": {"wood": 0, "wood_oak": 2},
         "mining": {"copper": 0, "iron": 2},
         "herblore": {"guam_leaf": 3, "marrentill": 0},
     },
-    "items": [],
+    "items": [
+        items["uncommon"]["charred_map_fragment"],
+        items["uncommon"]["dusty_journal_page"],
+    ],
+    "progress_stats": {
+        "grinds_completed": 5,
+        "minutes_grind": 150,
+        "quests_completed": 0,
+    },
+    "active_quests": {
+        "forgotten_path": Quest(
+            id="forgotten_path",
+            name="The Forgotten Path",
+            description="Follow the trail hinted at by the Charred Map Fragment.",
+            lore_intro="The parchment crackles in your hands. Faint ink reveals a trail long lost to time...",
+            lore_completion="",
+            stages=[
+                QuestStage(lore=""),
+                QuestStage(lore=""),
+                QuestStage(lore=""),
+            ],
+        )
+    },
 }
 
-for reward in GrindRewards().pull(5):
-    print("Pulling Grind Rewards")
-    time.sleep(2.0 + random.random() * 3.0)
-    reward.award()
-    time.sleep(random.random() * 3.0)
-    print()
+if False:
+    n_completed = 2
+    total_completed = int(player_info["grinds_completed"]) + n_completed
+    print(
+        f"You have completed {n_completed}, so now you have {total_completed} total completions ({0.5 * total_completed:.1f} hours)"
+    )
+    for reward in GrindRewards().pull(n_completed):
+        print("Pulling Grind Rewards")
+        time.sleep(2.0 + random.random() * 3.0)
+        reward.award()
+        time.sleep(random.random() * 3.0)
+        print()
+
+if False:
+    print(pull_item("uncommon").name)
+    print(pull_item("uncommon").name)
+
+if False:
+    player_info["active_quests"]["forgotten_path"].advance()
