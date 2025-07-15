@@ -130,6 +130,13 @@ items: dict[str, dict[str, Item]] = {
             effect="Do a special grind that lasts 45 minutes, has significantly higher Rare dropchance.",
         ),
     },
+    "epic": {
+        "lockbox": Item(
+            name="Lockbox (Epic)",
+            descr="Who knowns why mystical wonders this contains, need to bringt it to an arcane locksmith.",
+            effect="Can only be opened by an arcane locksmith.",
+        )
+    },
 }
 
 
@@ -250,19 +257,21 @@ def pull_item(tier: str) -> Item:
 
 
 player_info = {
-    "player_stats": {"xp": 70},
+    "player_stats": {"xp": 100},
     "currency": {
-        "gold": 24,
+        "gold": 32,
         "woodworking": {"wood": 0, "wood_oak": 2},
-        "mining": {"copper": 0, "iron": 2},
+        "mining": {"copper": 0, "iron": 4},
         "herblore": {"guam_leaf": 3, "marrentill": 0},
     },
     "items": [
         items["uncommon"]["charred_map_fragment"],
         items["uncommon"]["dusty_journal_page"],
+        items["uncommon"]["card_deck_gambler"],
+        items["epic"]["lockbox"],
     ],
     "progress_stats": {
-        "grinds_completed": 5,
+        "grinds_completed": 10,
         "minutes_grind": 150,
         "quests_completed": 0,
     },
@@ -283,8 +292,10 @@ player_info = {
 }
 
 if False:
-    n_completed = 2
-    total_completed = int(player_info["grinds_completed"]) + n_completed
+    n_completed = 3
+    total_completed = (
+        int(player_info["progress_stats"]["grinds_completed"]) + n_completed
+    )
     print(
         f"You have completed {n_completed}, so now you have {total_completed} total completions ({0.5 * total_completed:.1f} hours)"
     )
@@ -295,9 +306,7 @@ if False:
         time.sleep(random.random() * 3.0)
         print()
 
-if False:
-    print(pull_item("uncommon").name)
-    print(pull_item("uncommon").name)
+print(pull_item("uncommon").name)
 
 if False:
     player_info["active_quests"]["forgotten_path"].advance()
