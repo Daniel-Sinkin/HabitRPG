@@ -70,6 +70,9 @@ class Item:
 
 items: dict[str, dict[str, Item]] = {
     "common": {
+        "lockbox": Item(
+            name="Lockbox (Common)", descr="Open to get an common Item", effect=""
+        ),
         "worn_training_sword": Item(
             name="Worn Training Sword",
             descr="A dented but dependable blade, once used by squired-in-training",
@@ -82,6 +85,9 @@ items: dict[str, dict[str, Item]] = {
         ),
     },
     "uncommon": {
+        "lockbox": Item(
+            name="Lockbox (Uncommon)", descr="Open to get an uncommon Item", effect=""
+        ),
         "card_deck_gambler": Item(
             name="Card Deck (Gambler's Potential)",
             descr="Who can risk more than he who has nothing to lose?",
@@ -240,38 +246,24 @@ class GrindRewards(Rewards):
         return reward_list
 
 
-def pull_item(tier: str) -> Item:
-    if tier not in items:
-        raise ValueError(f"No items available for tier: {tier}")
-
-    item_pool = items[tier]
-    item = random.choice(list(item_pool.values()))
-
-    # Titan forge logic: uncommon has a 10% chance to become a rare
-    if tier == "uncommon" and random.random() < 0.10:
-        print(f"💥 Titan Forged! {item.name} has been upgraded to Rare!")
-        rare_pool = items["rare"]
-        return random.choice(list(rare_pool.values()))
-
-    return item
-
-
 player_info = {
-    "player_stats": {"xp": 100},
+    "player_stats": {"xp": 160},
     "currency": {
-        "gold": 32,
+        "gold": 48,
         "woodworking": {"wood": 0, "wood_oak": 2},
         "mining": {"copper": 0, "iron": 4},
-        "herblore": {"guam_leaf": 3, "marrentill": 0},
+        "herblore": {"guam_leaf": 3, "marrentill": 2},
     },
     "items": [
         items["uncommon"]["charred_map_fragment"],
         items["uncommon"]["dusty_journal_page"],
         items["uncommon"]["card_deck_gambler"],
         items["epic"]["lockbox"],
+        items["uncommon"]["lockbox"],
+        items["uncommon"]["lockbox"],
     ],
     "progress_stats": {
-        "grinds_completed": 10,
+        "grinds_completed": 16,
         "minutes_grind": 150,
         "quests_completed": 0,
     },
@@ -291,22 +283,37 @@ player_info = {
     },
 }
 
-if False:
-    n_completed = 3
-    total_completed = (
-        int(player_info["progress_stats"]["grinds_completed"]) + n_completed
-    )
-    print(
-        f"You have completed {n_completed}, so now you have {total_completed} total completions ({0.5 * total_completed:.1f} hours)"
-    )
-    for reward in GrindRewards().pull(n_completed):
-        print("Pulling Grind Rewards")
-        time.sleep(2.0 + random.random() * 3.0)
-        reward.award()
-        time.sleep(random.random() * 3.0)
-        print()
 
-print(pull_item("uncommon").name)
+def pull_item(tier: str) -> Item:
+    if tier not in items:
+        raise ValueError(f"No items available for tier: {tier}")
+
+    item_pool = items[tier]
+    item = random.choice(list(item_pool.values()))
+
+    # Titan forge logic: uncommon has a 10% chance to become a rare
+    if tier == "uncommon" and random.random() < 0.10:
+        print(f"💥 Titan Forged! {item.name} has been upgraded to Rare!")
+        rare_pool = items["rare"]
+        return random.choice(list(rare_pool.values()))
+
+    return item
+
+
+n_completed = 6
+total_completed = int(player_info["progress_stats"]["grinds_completed"]) + n_completed
+print(
+    f"You have completed {n_completed}, so now you have {total_completed} total completions ({0.5 * total_completed:.1f} hours)"
+)
+for reward in GrindRewards().pull(n_completed):
+    print("Pulling Grind Rewards")
+    time.sleep(2.0 + random.random() * 3.0)
+    reward.award()
+    time.sleep(random.random() * 3.0)
+    print()
+
+if False:
+    print(pull_item("uncommon").name)
 
 if False:
     player_info["active_quests"]["forgotten_path"].advance()
