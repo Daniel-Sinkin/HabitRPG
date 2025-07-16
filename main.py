@@ -250,7 +250,7 @@ class GrindRewards(Rewards):
 player_info = {
     "player_stats": {"xp": 200},
     "currency": {
-        "gold": 48,
+        "gold": 59,
         "woodworking": {"wood": 0, "wood_oak": 2},
         "mining": {"copper": 0, "iron": 4},
         "herblore": {"guam_leaf": 3, "marrentill": 2},
@@ -263,6 +263,8 @@ player_info = {
         items["uncommon"]["lockbox"],
         items["uncommon"]["lockbox"],
         items["rare"]["lockbox"],
+        items["epic"]["lockbox"],
+        items["common"]["lockbox"],
     ],
     "progress_stats": {
         "grinds_completed": 20,
