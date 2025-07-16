@@ -278,7 +278,9 @@ player_info = {
             lore_intro="The parchment crackles in your hands. Faint ink reveals a trail long lost to time...",
             lore_completion="",
             stages=[
-                QuestStage(lore=""),
+                QuestStage(
+                    lore="The cairn lay half-swallowed by moss and time, but your discovery reawakened something dormant. As the last glyph lit beneath your touch, a low hum filled the air — the path remembers you."
+                ),
                 QuestStage(lore=""),
                 QuestStage(lore=""),
             ],
@@ -303,20 +305,22 @@ def pull_item(tier: str) -> Item:
     return item
 
 
-n_completed = 4
-total_completed = int(player_info["progress_stats"]["grinds_completed"]) + n_completed
-print(
-    f"You have completed {n_completed}, so now you have {total_completed} total completions ({0.5 * total_completed:.1f} hours)"
-)
-for reward in GrindRewards().pull(n_completed):
-    print("Pulling Grind Rewards")
-    time.sleep(2.0 + random.random() * 3.0)
-    reward.award()
-    time.sleep(random.random() * 3.0)
-    print()
+if False:
+    n_completed = 4
+    total_completed = (
+        int(player_info["progress_stats"]["grinds_completed"]) + n_completed
+    )
+    print(
+        f"You have completed {n_completed}, so now you have {total_completed} total completions ({0.5 * total_completed:.1f} hours)"
+    )
+    for reward in GrindRewards().pull(n_completed):
+        print("Pulling Grind Rewards")
+        time.sleep(2.0 + random.random() * 3.0)
+        reward.award()
+        time.sleep(random.random() * 3.0)
+        print()
 
 if False:
     print(pull_item("uncommon").name)
 
-if False:
-    player_info["active_quests"]["forgotten_path"].advance()
+player_info["active_quests"]["forgotten_path"].advance()
