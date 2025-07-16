@@ -130,6 +130,7 @@ items: dict[str, dict[str, Item]] = {
         ),
     },
     "rare": {
+        "lockbox": Item(name="Lockbox (Rare)", descr="", effect=""),
         "chronomancers_sandglass": Item(
             name="Chronomancer's Sandglass",
             descr="This cracked hourglass was once used to stretch seconds into focus-filled eternities.",
@@ -247,7 +248,7 @@ class GrindRewards(Rewards):
 
 
 player_info = {
-    "player_stats": {"xp": 160},
+    "player_stats": {"xp": 200},
     "currency": {
         "gold": 48,
         "woodworking": {"wood": 0, "wood_oak": 2},
@@ -261,10 +262,10 @@ player_info = {
         items["epic"]["lockbox"],
         items["uncommon"]["lockbox"],
         items["uncommon"]["lockbox"],
+        items["rare"]["lockbox"],
     ],
     "progress_stats": {
-        "grinds_completed": 16,
-        "minutes_grind": 150,
+        "grinds_completed": 20,
         "quests_completed": 0,
     },
     "active_quests": {
@@ -300,7 +301,7 @@ def pull_item(tier: str) -> Item:
     return item
 
 
-n_completed = 6
+n_completed = 4
 total_completed = int(player_info["progress_stats"]["grinds_completed"]) + n_completed
 print(
     f"You have completed {n_completed}, so now you have {total_completed} total completions ({0.5 * total_completed:.1f} hours)"
