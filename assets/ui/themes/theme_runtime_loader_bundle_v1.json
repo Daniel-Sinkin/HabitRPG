@@ -1,0 +1,134 @@
+{
+  "schema": "habitrpg.ui.theme_loader.v1",
+  "style_token_keys": [
+    "frame_rounding",
+    "item_spacing_x",
+    "item_spacing_y",
+    "window_bg_r",
+    "window_bg_g",
+    "window_bg_b",
+    "accent_r",
+    "accent_g",
+    "accent_b"
+  ],
+  "modes": {
+    "calm": {
+      "frame_rounding": 6.0,
+      "item_spacing_x": 10.0,
+      "item_spacing_y": 8.0,
+      "window_bg_r": 0.10,
+      "window_bg_g": 0.11,
+      "window_bg_b": 0.12,
+      "accent_r": 0.33,
+      "accent_g": 0.60,
+      "accent_b": 0.39
+    },
+    "spark": {
+      "frame_rounding": 10.0,
+      "item_spacing_x": 12.0,
+      "item_spacing_y": 10.0,
+      "window_bg_r": 0.12,
+      "window_bg_g": 0.10,
+      "window_bg_b": 0.10,
+      "accent_r": 0.80,
+      "accent_g": 0.54,
+      "accent_b": 0.22
+    },
+    "fallback_calm": {
+      "frame_rounding": 6.0,
+      "item_spacing_x": 10.0,
+      "item_spacing_y": 8.0,
+      "window_bg_r": 0.98,
+      "window_bg_g": 0.98,
+      "window_bg_b": 0.96,
+      "accent_r": 0.18,
+      "accent_g": 0.60,
+      "accent_b": 0.69
+    },
+    "fallback_spark": {
+      "frame_rounding": 10.0,
+      "item_spacing_x": 12.0,
+      "item_spacing_y": 10.0,
+      "window_bg_r": 0.96,
+      "window_bg_g": 0.95,
+      "window_bg_b": 0.92,
+      "accent_r": 0.83,
+      "accent_g": 0.60,
+      "accent_b": 0.31
+    },
+    "calm_high_contrast": {
+      "frame_rounding": 6.0,
+      "item_spacing_x": 10.0,
+      "item_spacing_y": 8.0,
+      "window_bg_r": 0.05,
+      "window_bg_g": 0.07,
+      "window_bg_b": 0.09,
+      "accent_r": 0.44,
+      "accent_g": 0.90,
+      "accent_b": 0.80
+    },
+    "spark_high_contrast": {
+      "frame_rounding": 10.0,
+      "item_spacing_x": 12.0,
+      "item_spacing_y": 10.0,
+      "window_bg_r": 0.08,
+      "window_bg_g": 0.06,
+      "window_bg_b": 0.06,
+      "accent_r": 0.98,
+      "accent_g": 0.78,
+      "accent_b": 0.22
+    },
+    "fallback_calm_high_contrast": {
+      "frame_rounding": 6.0,
+      "item_spacing_x": 10.0,
+      "item_spacing_y": 8.0,
+      "window_bg_r": 1.0,
+      "window_bg_g": 1.0,
+      "window_bg_b": 1.0,
+      "accent_r": 0.00,
+      "accent_g": 0.43,
+      "accent_b": 0.53
+    },
+    "fallback_spark_high_contrast": {
+      "frame_rounding": 10.0,
+      "item_spacing_x": 12.0,
+      "item_spacing_y": 10.0,
+      "window_bg_r": 0.98,
+      "window_bg_g": 0.97,
+      "window_bg_b": 0.94,
+      "accent_r": 0.55,
+      "accent_g": 0.32,
+      "accent_b": 0.00
+    }
+  },
+  "missing_key_fallback": {
+    "default_mode": "calm",
+    "lookup_order": [
+      "requested_mode",
+      "calm",
+      "hard_defaults"
+    ],
+    "hard_defaults": {
+      "frame_rounding": 6.0,
+      "item_spacing_x": 10.0,
+      "item_spacing_y": 8.0,
+      "window_bg_r": 0.10,
+      "window_bg_g": 0.11,
+      "window_bg_b": 0.12,
+      "accent_r": 0.33,
+      "accent_g": 0.60,
+      "accent_b": 0.39
+    },
+    "invalid_value_behavior": {
+      "frame_rounding": "clamp[0,16]",
+      "item_spacing_x": "clamp[4,24]",
+      "item_spacing_y": "clamp[4,24]",
+      "window_bg_r": "clamp[0,1]",
+      "window_bg_g": "clamp[0,1]",
+      "window_bg_b": "clamp[0,1]",
+      "accent_r": "clamp[0,1]",
+      "accent_g": "clamp[0,1]",
+      "accent_b": "clamp[0,1]"
+    }
+  }
+}

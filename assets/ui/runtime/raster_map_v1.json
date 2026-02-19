@@ -1,0 +1,273 @@
+{
+  "schema": "habitrpg.raster_map.v1",
+  "canonical_master": "svg",
+  "sizes": [
+    16,
+    20,
+    24,
+    48,
+    64
+  ],
+  "entries": [
+    {
+      "svg": "assets/ui/icons/icon_character_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_character_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_character_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_character_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_character_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_character_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/icons/icon_energy_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_energy_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_energy_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_energy_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_energy_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_energy_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/icons/icon_habits_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_habits_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_habits_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_habits_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_habits_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_habits_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/icons/icon_insights_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_insights_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_insights_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_insights_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_insights_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_insights_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/icons/icon_learning_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_learning_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_learning_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_learning_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_learning_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_learning_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/icons/icon_mastery_milestone_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_mastery_milestone_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_mastery_milestone_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_mastery_milestone_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_mastery_milestone_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_mastery_milestone_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/icons/icon_quests_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_quests_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_quests_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_quests_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_quests_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_quests_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/icons/icon_settings_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_settings_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_settings_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_settings_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_settings_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_settings_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/icons/icon_today_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_today_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_today_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_today_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_today_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_today_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/icons/icon_xp_level_outline_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/icon_xp_level_outline_v1_s16.png",
+        "s20": "assets/ui/raster/20/icon_xp_level_outline_v1_s20.png",
+        "s24": "assets/ui/raster/24/icon_xp_level_outline_v1_s24.png",
+        "s48": "assets/ui/raster/48/icon_xp_level_outline_v1_s48.png",
+        "s64": "assets/ui/raster/64/icon_xp_level_outline_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/badge_mastery_milestone_marker_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/badge_mastery_milestone_marker_v1_s16.png",
+        "s20": "assets/ui/raster/20/badge_mastery_milestone_marker_v1_s20.png",
+        "s24": "assets/ui/raster/24/badge_mastery_milestone_marker_v1_s24.png",
+        "s48": "assets/ui/raster/48/badge_mastery_milestone_marker_v1_s48.png",
+        "s64": "assets/ui/raster/64/badge_mastery_milestone_marker_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_learning_complete_full_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_learning_complete_full_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_learning_complete_full_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_learning_complete_full_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_learning_complete_full_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_learning_complete_full_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_learning_complete_low_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_learning_complete_low_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_learning_complete_low_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_learning_complete_low_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_learning_complete_low_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_learning_complete_low_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_learning_complete_off_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_learning_complete_off_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_learning_complete_off_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_learning_complete_off_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_learning_complete_off_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_learning_complete_off_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_learning_complete_xlow_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_learning_complete_xlow_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_learning_complete_xlow_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_learning_complete_xlow_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_learning_complete_xlow_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_learning_complete_xlow_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_life_complete_full_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_life_complete_full_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_life_complete_full_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_life_complete_full_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_life_complete_full_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_life_complete_full_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_life_complete_low_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_life_complete_low_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_life_complete_low_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_life_complete_low_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_life_complete_low_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_life_complete_low_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_life_complete_off_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_life_complete_off_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_life_complete_off_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_life_complete_off_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_life_complete_off_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_life_complete_off_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_life_complete_xlow_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_life_complete_xlow_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_life_complete_xlow_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_life_complete_xlow_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_life_complete_xlow_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_life_complete_xlow_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_milestone_unlock_full_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_milestone_unlock_full_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_milestone_unlock_full_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_milestone_unlock_full_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_milestone_unlock_full_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_milestone_unlock_full_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_milestone_unlock_low_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_milestone_unlock_low_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_milestone_unlock_low_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_milestone_unlock_low_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_milestone_unlock_low_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_milestone_unlock_low_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_milestone_unlock_off_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_milestone_unlock_off_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_milestone_unlock_off_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_milestone_unlock_off_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_milestone_unlock_off_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_milestone_unlock_off_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_xp_gain_full_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_xp_gain_full_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_xp_gain_full_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_xp_gain_full_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_xp_gain_full_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_xp_gain_full_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_xp_gain_low_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_xp_gain_low_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_xp_gain_low_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_xp_gain_low_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_xp_gain_low_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_xp_gain_low_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/fx_xp_gain_xlow_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/fx_xp_gain_xlow_v1_s16.png",
+        "s20": "assets/ui/raster/20/fx_xp_gain_xlow_v1_s20.png",
+        "s24": "assets/ui/raster/24/fx_xp_gain_xlow_v1_s24.png",
+        "s48": "assets/ui/raster/48/fx_xp_gain_xlow_v1_s48.png",
+        "s64": "assets/ui/raster/64/fx_xp_gain_xlow_v1_s64.png"
+      }
+    },
+    {
+      "svg": "assets/ui/feedback/indicator_completion_ring_v1.svg",
+      "rasters": {
+        "s16": "assets/ui/raster/16/indicator_completion_ring_v1_s16.png",
+        "s20": "assets/ui/raster/20/indicator_completion_ring_v1_s20.png",
+        "s24": "assets/ui/raster/24/indicator_completion_ring_v1_s24.png",
+        "s48": "assets/ui/raster/48/indicator_completion_ring_v1_s48.png",
+        "s64": "assets/ui/raster/64/indicator_completion_ring_v1_s64.png"
+      }
+    }
+  ]
+}
